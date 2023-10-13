@@ -1,4 +1,3 @@
-import { Value } from './models/Value.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { isValidProp } from './utils/IsValidProp.js'
 import { loadState } from './utils/Store.js'
@@ -14,6 +13,8 @@ class ObservableAppState extends EventEmitter {
   // SECTION GLOBAL VARIABLES
 
   toDoList = [new ToDo()]
+
+  settings = null
 
 
   // !SECTION GLOBAL VARIABLES

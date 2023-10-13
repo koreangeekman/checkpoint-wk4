@@ -4,3 +4,11 @@ export const useSockets = false
 export const domain = 'codeworksclassroom.auth0.com'
 export const clientId = 'pOXw2OGv1LsYi7LEBmDF04RLkXQvldml'
 export const audience = 'https://codeworksclassroom.com'
+
+
+// baseURL = https://sandbox.codeworksacademy.com/
+//     api / weather
+//     api / quotes
+//     api / images
+//     api / todos
+//     account

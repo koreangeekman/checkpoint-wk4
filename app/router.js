@@ -1,3 +1,7 @@
+import { BGImgController } from "./controllers/BGImgController.js";
+import { InspirationalController } from "./controllers/InspirationalController.js";
+import { ToDoController } from "./controllers/ToDoController.js";
+import { WeatherController } from "./controllers/WeatherController.js";
 
 /**
  * Register your routes for the application here
@@ -6,14 +10,10 @@
 export const router = [
   {
     path: '',
-    controller: null,
+    controller: [ToDoController, BGImgController, InspirationalController, WeatherController],
     view: null
   }
 ]
-
-
-
-
 
 
 /**
