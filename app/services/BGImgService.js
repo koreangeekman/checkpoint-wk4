@@ -10,7 +10,7 @@ function _saveData() {
 
 function _checkExistingBGImage(bgImgObj) {
   const check = AppState.bgImgs.find(img => img.url == bgImgObj.url)
-  console.log('check existing bg image', check);
+  // console.log('check for an existing bg image saved to local', check);
   if (check) {
     console.log('[BG Image already saved to local storage]');
     return

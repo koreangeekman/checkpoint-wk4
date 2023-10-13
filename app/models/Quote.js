@@ -36,7 +36,7 @@ import { generateId } from "../utils/GenerateId.js"
 export class Quote {
   constructor(data) {
     this.id = data._id || generateId()
-    this.quote = data.content || 'Totally Uninspirational Content'
+    this.content = data.content || 'Totally Uninspirational Content'
     this.author = data.author || 'Unknown Author'
     this.tags = data.tags || ["untagged"]
   }
