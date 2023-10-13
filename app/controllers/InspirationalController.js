@@ -18,7 +18,7 @@ function _drawHTML(quoteObj) {
   <p class="blueBlur px-2 quoteContent">${quoteObj.content}</p>
   <p class="blueBlur px-2 quoteInfo">${quoteObj.author} • [${quoteObj.tags}]</p>
   `
-  console.log(contentHTML);
+  // console.log(contentHTML);
   setHTML('quote', contentHTML)
 }
 

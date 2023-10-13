@@ -15,6 +15,9 @@ function drawUser() {
   // console.log('auth controller account', account.id, account.email, account.name, account.picture);
   // @ts-ignore
   document.getElementById('authstate').innerHTML = template
+  if (account) {
+    document.getElementById('ToDo').classList.remove('d-none')
+  }
 }
 
 export class AuthController {
@@ -35,6 +38,7 @@ export class AuthController {
   logout() {
     try {
       AuthService.logout()
+      document.getElementById('ToDo').classList.add('d-none')
     } catch (e) {
       logger.error(e)
     }

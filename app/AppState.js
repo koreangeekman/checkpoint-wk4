@@ -1,4 +1,5 @@
 import { BGImg } from "./models/BGImg.js"
+import { ToDo } from "./models/ToDo.js"
 import { EventEmitter } from './utils/EventEmitter.js'
 import { isValidProp } from './utils/IsValidProp.js'
 import { loadState } from './utils/Store.js'
@@ -14,7 +15,7 @@ class ObservableAppState extends EventEmitter {
   // SECTION GLOBAL VARIABLES
 
   toDoList = []
-  // toDoList = [new ToDo()]
+  // toDoList = [new ToDo({ description: "testtest" })]
 
   settings = {
     // accountId: this.account.id,

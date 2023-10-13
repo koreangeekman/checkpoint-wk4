@@ -2,7 +2,7 @@
 /* SECTION GENERAL/SHARED CSS */
 
 .blueBlur {
-  background-color: #12345678;
+  background-color: #123456b0;
   color: whitesmoke;
   border-radius: .25rem;
   /* width: fit-content; */
@@ -15,8 +15,7 @@ body {
   background-color: #123456b0;
   background-repeat: no-repeat;
   background-position: center;
-  object-fit: cover;
-  /* FIXME img not filling entire screen */
+  background-size: cover;
 }
 
 #BGImgCredit {
@@ -50,6 +49,20 @@ body {
   margin: 1rem;
   width: 86dvh;
   height: fit-content;
+  color: whitesmoke;
+  background-color: #12345678;
+}
+
+.clock {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+}
+
+.temp {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
 }
 
 /* !SECTION */
@@ -88,3 +101,23 @@ body {
 
 /* !SECTION */
 /* ---------------------------------------- */
+/* SECTION TODO */
+
+form i {
+  color: orange;
+  text-shadow: 0 0 5px black;
+}
+
+.card {
+  background-color: #12345678;
+  color: whitesmoke;
+  width: 30dvh;
+}
+
+.listItem {
+  /* background-color: #123456b0; */
+  border-radius: .25rem;
+  /*  */
+}
+
+/* !SECTION */
