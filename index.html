@@ -13,39 +13,42 @@
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>checkpoint wk4</title>
+  <!-- <script id="debug-script" src="https://cdn.jsdelivr.net/gh/MickShannahan/style-debug@latest/debug.min.js"
+    defer></script> -->
 </head>
 
-<body>
-  <!-- SECTION MAIN -->
+<body class="debug">
   <main class="container-fluid" id="router-view">
-    <section class="row">
+    <div class="row">
       <div class="col-12 d-flex justify-content-center">
 
-        <span class="d-block blueBlur p-2" id="BGImgCredit">
-          <p>Author: </p>
-          <p>Tags: </p>
-          <p>Query: </p>
-        </span>
+        <!-- SECTION TODO-->
 
 
-        <!-- INSPIRATIONAL QUOTE FIELD -->
-        <p class="fs-5 text-white blueBlur px-2 mx-3" id="quote"></p>
+        <!-- !SECTION TODO-->
 
         <!-- SECTION USER-->
-        <nav class="d-flex align-items-center border userBar">
-          <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-            loading="lazy">
+        <div class="d-flex align-items-center border userBar">
+          <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45"
+            alt="codeworks logo" loading="lazy">
           <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
-        </nav>
+        </div>
         <!-- !SECTION USER -->
 
       </div>
-    </section>
+    </div>
 
-
-    <!-- !SECTION MAIN -->
   </main>
 
+  <!-- INSPIRATIONAL QUOTE FIELD -->
+  <div class="text-white text-center px-5" id="quote">
+    <!-- draw in info -->
+  </div>
+
+  <!-- BG IMG CREDIT -->
+  <div class="d-block blueBlur p-2" id="BGImgCredit">
+    <!-- draw in info -->
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>

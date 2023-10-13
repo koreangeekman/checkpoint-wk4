@@ -1,19 +1,42 @@
 /* BASIC STYLES HERE */
 /* SECTION GENERAL/SHARED CSS */
-body {
-  background-color: #123456b0;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100%;
-  object-fit: cover;
-  /* FIXME img not filling entire screen */
-}
 
 .blueBlur {
   background-color: #12345678;
   color: whitesmoke;
   border-radius: .25rem;
-  width: fit-content;
+  /* width: fit-content; */
+}
+
+/* !SECTION */
+/* ---------------------------------------- */
+/* SECTION BG IMG CSS */
+body {
+  background-color: #123456b0;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  /* FIXME img not filling entire screen */
+}
+
+#BGImgCredit {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  filter: blur(1px);
+  opacity: .25;
+  transition: ease-in-out .25s;
+}
+
+#BGImgCredit p {
+  font-size: .5rem;
+  margin: 0;
+}
+
+#BGImgCredit:hover {
+  filter: blur(0);
+  opacity: 1;
+  /*  */
 }
 
 /* !SECTION */
@@ -25,36 +48,41 @@ body {
   bottom: 1rem;
   padding: 1rem;
   margin: 1rem;
-  width: 86%;
+  width: 86dvh;
+  height: fit-content;
 }
 
 /* !SECTION */
 /* ---------------------------------------- */
-/* SECTION BG IMG CSS */
 
-#BGImgCredit {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-}
-
-#BGImgCredit p {
-  font-size: .5rem;
-  margin: 0;
-}
-
-#BGImgCredit:hover {
-  /*  */
-}
-
-/* !SECTION */
-/* ---------------------------------------- */
 /* SECTION QUOTE */
 
 #quote {
   position: absolute;
   bottom: 8rem;
+  text-align: center;
+  align-self: center;
+  /* width: 100%; */
+  /* border: 1px solid red; */
+}
+
+.quoteContent {
+  cursor: help;
+  font-size: medium;
+  width: fit-content;
+}
+
+.quoteInfo {
   font-size: small;
+  width: fit-content;
+  opacity: 0;
+  visibility: hidden;
+  transition: ease-in-out .25s;
+}
+
+.quoteContent:hover+.quoteInfo {
+  opacity: 1;
+  visibility: visible;
 }
 
 
