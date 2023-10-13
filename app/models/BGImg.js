@@ -36,9 +36,9 @@ import { generateId } from "../utils/GenerateId.js"
 export class BGImg {
   constructor(data) {
     this.id = data.id || generateId()
-    this.url = data.url
-    this.imgUrl = data.imgUrl
-    this.largeImgUrl = data.largeImgUrl
+    this.url = data.url || ''
+    this.imgUrl = data.imgUrl || ''
+    this.largeImgUrl = data.largeImgUrl || ''
     this.author = data.author || ''
     this.tags = data.tags || ["untagged"]
     this.query = data.query

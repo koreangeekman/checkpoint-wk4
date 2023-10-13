@@ -16,6 +16,17 @@ class ToDoService {
     }
   }
 
+  // async patchImg() {
+  //   try {
+  //     console.log('attempting patch');
+  //     const res = await api.patch(`account/${AppState.account.id}`, { picture: "https://codeworks.blob.core.windows.net/media/koreangeekman__QGdtYWlsLmNvbQ==/profile-picture.png?v=83296" })
+  //     console.log('[service api patch]', res.data);
+  //   } catch (error) {
+  //     console.error('[ToDoService] patchImg()', error);
+  //     Pop.error('[ToDoService] patchImg()', error)
+  //   }
+  // }
+
 }
 
 export const toDoService = new ToDoService();

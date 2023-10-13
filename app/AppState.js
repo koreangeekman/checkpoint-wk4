@@ -1,3 +1,4 @@
+import { BGImg } from "./models/BGImg.js"
 import { EventEmitter } from './utils/EventEmitter.js'
 import { isValidProp } from './utils/IsValidProp.js'
 import { loadState } from './utils/Store.js'
@@ -29,12 +30,16 @@ class ObservableAppState extends EventEmitter {
     weather: ''
   }
 
+  bgImgs = [] //record all BG Images processed in view
+
+  favBGImgs = []
 
   // !SECTION GLOBAL VARIABLES
 
   // Used to load initial data
   init() {
-
+    this.bgImgs = loadState('bgImgs', [BGImg])
+    this.favBGImgs = loadState('favBGImgs', [BGImg])
   }
 }
 

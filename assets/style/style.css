@@ -2,4 +2,34 @@
 
 body {
   background-color: #123456b0;
+  background-repeat: no-repeat;
+  height: 100%;
+  object-fit: cover;
+  /* FIXME img not filling entire screen */
+}
+
+.userBar {
+  border-radius: 2rem;
+}
+
+.blueBlur {
+  background-color: #12345678;
+  color: whitesmoke;
+  border-radius: .25rem;
+  width: fit-content;
+}
+
+#BGImgCredit {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+#BGImgCredit p {
+  font-size: .5rem;
+  margin: 0;
+}
+
+#BGImgCredit:hover {
+  /*  */
 }

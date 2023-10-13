@@ -8,8 +8,8 @@ function drawUser() {
   const userAvatar = avatarTemplate(account)
   const button = authButton(user)
   const template = /* html */ `
-    ${userAvatar}
     ${button}
+    ${userAvatar}
   `
   // console.log('auth controller - user', user);
   // console.log('auth controller account', account.id, account.email, account.name, account.picture);
@@ -56,9 +56,9 @@ function avatarTemplate(account) {
   return account
     ? /* html */ `
     <div class="mr-2">
+      <span class="mx-3">${account.name}</span>
       <img class="rounded-circle" src="${account.picture}" alt="${account.name}" height="45"/>
-      <span class="mx-1">${account.name}</span>
-      </div>`
+    </div>`
     : AuthService.loading
       ? /* html */ `
       <div class="skeleton-loader dark avatar"></div>
