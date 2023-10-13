@@ -11,7 +11,7 @@ function _drawHTML() {
 
 export class WeatherController {
   constructor() {
-
+    weatherService.getWeather();
   }
 
 }

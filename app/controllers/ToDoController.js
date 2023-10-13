@@ -11,6 +11,7 @@ function _drawHTML() {
 
 export class ToDoController {
   constructor() {
+    AppState.on('account', toDoService.getToDos)
 
   }
 

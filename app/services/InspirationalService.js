@@ -6,6 +6,15 @@ import { api } from "./AxiosService.js";
 
 class InspirationalService {
 
+  async getQuote() {
+    try {
+      const res = await api.get('api/quotes')
+      console.log(res.data);
+    } catch (error) {
+      console.error('[InspirationalService] getQuote()', error);
+      Pop.error('[InspirationalService] getQuote()', error)
+    }
+  }
 
 }
 

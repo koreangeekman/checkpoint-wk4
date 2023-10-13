@@ -12,9 +12,22 @@ class ObservableAppState extends EventEmitter {
 
   // SECTION GLOBAL VARIABLES
 
-  toDoList = [new ToDo()]
+  toDoList = []
+  // toDoList = [new ToDo()]
 
-  settings = null
+  settings = {
+    // accountId: this.account.id,
+    tempFormat: "F",
+    location: 'Boise',
+    weatherDetails: false,
+    bgImgSticky: false
+  }
+
+  today = {
+    bgImgUrl: '',
+    quote: '',
+    weather: ''
+  }
 
 
   // !SECTION GLOBAL VARIABLES

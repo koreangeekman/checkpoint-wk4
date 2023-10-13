@@ -6,6 +6,15 @@ import { api } from "./AxiosService.js";
 
 class BGImgService {
 
+  async getBGImg() {
+    try {
+      const res = await api.get('api/images')
+      console.log(res.data);
+    } catch (error) {
+      console.error('[BGImgService] getBGImg()', error);
+      Pop.error('[BGImgService] getBGImg()', error)
+    }
+  }
 
 }
 
