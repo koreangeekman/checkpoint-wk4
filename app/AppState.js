@@ -39,6 +39,7 @@ class ObservableAppState extends EventEmitter {
 
   // Used to load initial data
   init() {
+    this.toDoList = loadState('toDoList', [ToDo])
     this.bgImgs = loadState('bgImgs', [BGImg])
     this.favBGImgs = loadState('favBGImgs', [BGImg])
   }

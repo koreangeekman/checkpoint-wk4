@@ -6,7 +6,7 @@ import { setHTML } from "../utils/Writer.js";
 function _drawToDoList() {
   const incomplete = AppState.toDoList.filter(task => task.completed == false)
   let contentHTML = `
-  <small class="text-center">Tasks remaining: ${incomplete.length}</small>
+  <small class="text-center"><i>Tasks remaining</i>: &nbsp ${incomplete.length}</small>
   `;
   AppState.toDoList.forEach(task => contentHTML += task.listTemplate);
   setHTML('todoList', contentHTML)
@@ -21,7 +21,6 @@ export class ToDoController {
 
   async addTask(event) {
     try {
-      console.log('addTask at controller', event.target);
       event.preventDefault();
       await toDoService.addTask(getFormData(event.target))
       event.target.reset();

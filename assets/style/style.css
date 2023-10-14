@@ -19,6 +19,7 @@ body {
 }
 
 #BGImgCredit {
+  cursor: help;
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -118,6 +119,11 @@ form i {
   /* background-color: #123456b0; */
   border-radius: .25rem;
   /*  */
+}
+
+.offlineOutline {
+  border: 1px dashed red;
+  opacity: .5;
 }
 
 /* !SECTION */

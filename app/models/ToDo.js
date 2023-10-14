@@ -23,6 +23,7 @@ export class ToDo {
     this.id = data.id || null
     this.completed = data.completed || false
     this.description = data.description || 'No Content'
+    this.online = data.online || true
     this.creatorId = data.creatorId || null
   }
 
@@ -30,9 +31,9 @@ export class ToDo {
     if (this.completed) {
       return `
         <span class="d-flex align-items-center justify-content-between p-1">
-          <span class="d-flex">
+          <span class="d-flex ${this.isOnline}">
             <input type="checkbox" onchange="app.ToDoController.toggle('${this.id}')" checked>
-            <p class="listItem px-1 ms-1 mb-0 shadow"><s>${this.description}</s></p>
+            <p class="listItem px-1 ms-1 mb-0 shadow text-secondary"><s>${this.description}</s></p>
           </span>
           <i class="fs-4 text-danger mdi mdi-trash-can" type="button" onclick="app.ToDoController.removeTask('${this.id}')"></i>
         </span>
@@ -40,7 +41,7 @@ export class ToDo {
     }
     return `
       <span class="d-flex align-items-center justify-content-between p-1">
-        <span class="d-flex">
+        <span class="d-flex ${this.isOnline}">
           <input type="checkbox" onchange="app.ToDoController.toggle('${this.id}')">
           <p class="listItem px-1 ms-1 mb-0 shadow">${this.description}</p>
         </span>
@@ -48,4 +49,12 @@ export class ToDo {
       </span>
     `
   }
+
+  get isOnline() {
+    if (this.online) {
+      return ''
+    }
+    return `offlineOutline`
+  }
+
 }
