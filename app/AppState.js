@@ -15,7 +15,7 @@ class ObservableAppState extends EventEmitter {
   // SECTION GLOBAL VARIABLES
 
   toDoList = []
-  // toDoList = [new ToDo({ description: "testtest" })]
+  // toDoList = [new ToDo({ description: "task 1" })]
 
   settings = {
     // accountId: this.account.id,

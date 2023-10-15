@@ -54,16 +54,63 @@ body {
   background-color: #12345678;
 }
 
+/* !SECTION */
+/* ---------------------------------------- */
+/* SECTION CLOCK */
+
 .clock {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 2.5rem;
-  line-height: 2.5rem;
+  /* font-size: 2.5rem;
+  line-height: 2.5rem; */
+}
+
+/* !SECTION */
+/* ---------------------------------------- */
+/* SECTION WEATHER */
+
+.weather {
+  font-family: 'Courier New', Courier, monospace;
+  border: 1px solid white;
+  border-radius: 1rem;
+}
+
+.weatherDetails p {
+  margin-bottom: 0;
+}
+
+.bar {
+  border-left: 1px dashed grey;
 }
 
 .temp {
+  cursor: help;
+}
+
+#temp:hover+#tempDetails {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 2.5rem;
-  line-height: 2.5rem;
+  border: 1px solid white;
+  border-radius: 1rem;
+}
+
+.temp hr,
+i {
+  color: orange;
+}
+
+.tempSmall {
+  font-size: 1rem;
+  line-height: .5rem;
+}
+
+.tempBig {
+  margin-top: -1rem;
+  font-size: 3.2rem;
+  line-height: 3.2rem;
+  /*  */
+}
+
+.tempSplit {
+  line-height: 3rem;
 }
 
 /* !SECTION */
@@ -73,7 +120,7 @@ body {
 
 #quote {
   position: absolute;
-  bottom: 8rem;
+  bottom: 15rem;
   text-align: center;
   align-self: center;
   /* width: 100%; */
