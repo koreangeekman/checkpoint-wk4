@@ -20,67 +20,80 @@
 <body class="debug">
   <main class="container-fluid" id="router-view">
     <div class="row">
-      <div class="col-12 d-flex w-100 justify-content-center">
+      <div class="col-12 align-items-between h-100">
 
-        <!-- SECTION TODO-->
-        <div class="d-block d-none" id="ToDo">
-          <form class="d-flex align-items-center" onsubmit="app.ToDoController.addTask(event)">
-            <input class="form-control" type="text" name="description" placeholder="New Task?" maxlength="32">
-            <button class="btn p-0" type="submit"><i class="fs-3 p-1 mdi mdi-plus-box"></i>
-            </button>
-          </form>
+        <div class="w-100 d-flex justify-content-between p-3">
 
-          <div class="card p-2" id="todoList">
-            <!-- draw to do list items -->
-          </div>
-        </div>
-
-        <!-- !SECTION TODO-->
-
-        <!-- SECTION USER-->
-        <div class="d-flex justify-content-between align-items-center border userBar justify-content-center">
-          <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45"
-            alt="codeworks logo" loading="lazy">
-
-          <div class="d-flex">
-
-            <!-- DIGITAL CLOCK  -->
-            <div class="clock px-3" id="clock">
-              [00:00]
+          <!-- WEATHER WIDGET -->
+          <div class="d-flex weather" onclick="app.WeatherController.changeType()">
+            <div class="d-block text-center temp px-3" id="weather">
+              <!-- draw in weather data -->
             </div>
-
-            <!-- WEATHER WIDGET -->
-            <div class="d-flex weather mx-5" onclick="app.WeatherController.changeType()">
-              <div class="d-block text-center temp px-3" id="weather">
-                <!-- draw in data -->
-              </div>
-              <div class="bar"></div>
-              <div class="d-flex flex-column justify-content-between p-3" id="weatherDetails">
-                <!-- draw in data -->
-              </div>
+            <div class="bar"></div>
+            <div class="d-flex flex-column justify-content-between p-3" id="weatherDetails">
+              <!-- draw in addt'l weather details -->
             </div>
-
           </div>
 
-          <!-- AUTH STATE / LOGIN/OUT -->
-          <div class="justify-content-end align-items-center d-flex" id="authstate"></div>
+          <!-- BG IMG CREDIT -->
+          <div class="d-block blueBlur p-2" id="BGImgCredit">
+            <!-- draw in bg credit info -->
+          </div>
+
+          <!-- SECTION TODO-->
+          <div class="d-block d-none" id="ToDo">
+            <form class="d-flex align-items-center" onsubmit="app.ToDoController.addTask(event)">
+              <input class="form-control" type="text" name="description" placeholder="New Task?" maxlength="32">
+              <button class="btn p-0" type="submit"><i class="fs-3 p-1 mdi mdi-plus-box"></i>
+              </button>
+            </form>
+            <div class="card p-2" id="todoList">
+              <!-- draw to do list items -->
+            </div>
+          </div>
+          <!-- !SECTION TODO-->
         </div>
-        <!-- !SECTION USER -->
+
+        <div class="d-block h-100">
+          <!-- INSPIRATIONAL QUOTE FIELD -->
+          <div class="w-100 d-flex justify-content-center text-center">
+            <div class="text-white d-block px-5" id="quote">
+              <!-- TODO find out why elements wont center in a d-block, making me do ^ d-flex/align combo instead-->
+              <!-- draw in quote -->
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center w-100">
+            <!-- SECTION USER-->
+            <div class="d-flex justify-content-between align-items-center border userBar">
+              <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45"
+                alt="codeworks logo" loading="lazy">
+
+              <div class="d-flex">
+
+                <!-- DIGITAL CLOCK WIDGET -->
+                <div class="clock px-3" id="clock">
+                  [00:00]
+                </div>
+
+              </div>
+
+              <!-- AUTH STATE / LOGIN/OUT -->
+              <div class="justify-content-end align-items-center d-flex" id="authstate"></div>
+            </div>
+            <!-- !SECTION USER -->
+
+          </div>
+        </div>
 
       </div>
     </div>
 
   </main>
 
-  <!-- INSPIRATIONAL QUOTE FIELD -->
-  <div class="text-white text-center px-5" id="quote">
-    <!-- draw in info -->
-  </div>
 
-  <!-- BG IMG CREDIT -->
-  <div class="d-block blueBlur p-2" id="BGImgCredit">
-    <!-- draw in info -->
-  </div>
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>

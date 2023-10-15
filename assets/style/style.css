@@ -20,12 +20,11 @@ body {
 
 #BGImgCredit {
   cursor: help;
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
   filter: blur(1px);
   opacity: .25;
   transition: ease-in-out .25s;
+  height: fit-content;
+  width: fit-content;
 }
 
 #BGImgCredit p {
@@ -43,15 +42,13 @@ body {
 /* ---------------------------------------- */
 /* SECTION USER BAR */
 .userBar {
-  position: absolute;
   border-radius: 3rem;
-  bottom: 1rem;
   padding: 1rem;
   margin: 1rem;
   width: 86dvh;
   height: fit-content;
   color: whitesmoke;
-  background-color: #12345678;
+  background-color: #123456b0;
 }
 
 /* !SECTION */
@@ -70,8 +67,12 @@ body {
 
 .weather {
   font-family: 'Courier New', Courier, monospace;
+  background-color: #123456b0;
+  color: whitesmoke;
   border: 1px solid white;
   border-radius: 1rem;
+  width: fit-content;
+  height: fit-content;
 }
 
 .weatherDetails p {
@@ -119,23 +120,21 @@ i {
 /* SECTION QUOTE */
 
 #quote {
-  position: absolute;
-  bottom: 15rem;
   text-align: center;
   align-self: center;
-  /* width: 100%; */
-  /* border: 1px solid red; */
 }
 
 .quoteContent {
   cursor: help;
   font-size: large;
   width: fit-content;
+  border-radius: 2rem;
 }
 
 .quoteInfo {
   font-size: small;
   width: fit-content;
+  border-radius: 2rem;
   opacity: 0;
   visibility: hidden;
   transition: ease-in-out .25s;
@@ -157,7 +156,7 @@ form i {
 }
 
 .card {
-  background-color: #12345678;
+  background-color: #123456b0;
   color: whitesmoke;
   width: 30dvh;
 }
