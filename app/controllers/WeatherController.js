@@ -5,17 +5,29 @@ import { setHTML } from "../utils/Writer.js";
 
 function _drawWeather() {
   const contentHTML = AppState.today.weather.weatherTemplate;
-  const contentHTMLDetail = AppState.today.weather.weatherDetailTemplate;
   // console.log('[WeatherController] _drawWeather html', contentHTML);
-  // console.log('[WeatherController] _drawWeather html', contentHTMLDetail);
   setHTML('weather', contentHTML)
-  setHTML('weatherDetails', contentHTMLDetail)
+}
+function _drawWeatherDetail() {
+  const contentHTML = AppState.today.weather.weatherDetailTemplate;
+  // console.log('[WeatherController] _drawWeatherDetail html', contentHTML);
+  setHTML('weatherDetails', contentHTML)
+}
+
+function _drawALL() {
+  _drawWeather();
+  _drawWeatherDetail();
 }
 
 export class WeatherController {
   constructor() {
     weatherService.getWeather();
-    AppState.on('today', _drawWeather)
+    AppState.on('today', _drawALL)
+  }
+
+  changeType() {
+    weatherService.changeType();
+    _drawWeather();
   }
 
 }

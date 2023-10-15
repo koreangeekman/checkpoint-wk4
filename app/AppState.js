@@ -1,4 +1,5 @@
 import { BGImg } from "./models/BGImg.js"
+import { Settings } from "./models/Settings.js"
 import { ToDo } from "./models/ToDo.js"
 import { EventEmitter } from './utils/EventEmitter.js'
 import { isValidProp } from './utils/IsValidProp.js'
@@ -42,6 +43,7 @@ class ObservableAppState extends EventEmitter {
     this.toDoList = loadState('toDoList', [ToDo])
     this.bgImgs = loadState('bgImgs', [BGImg])
     this.favBGImgs = loadState('favBGImgs', [BGImg])
+    // this.settings = loadState('settings', [Settings])
   }
 }
 

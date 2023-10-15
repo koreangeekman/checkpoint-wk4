@@ -149,25 +149,25 @@ export class Weather {
   get mainTempFormat() {
     let temp = this.main?.temp;
     if (this.format == 'F') { return `${((temp - 273.15) * (9 / 5) + 32).toFixed(0)}ºF` }
-    if (this.format == 'C') { return `${temp - 273.15}ºC` }
-    return `${temp}ºK`
+    if (this.format == 'C') { return `${(temp - 273.15).toFixed(0)}ºC` }
+    return `${temp.toFixed(0)}ºK`
   }
   get minTempFormat() {
     let temp = this.main?.temp_min;
     if (this.format == 'F') { return `${((temp - 273.15) * (9 / 5) + 32).toFixed(0)}ºF` }
-    if (this.format == 'C') { return `${temp - 273.15}ºC` }
-    return `${temp}ºK`
+    if (this.format == 'C') { return `${(temp - 273.15).toFixed(0)}ºC` }
+    return `${temp.toFixed(1)}ºK`
   }
   get maxTempFormat() {
     let temp = this.main?.temp_max;
     if (this.format == 'F') { return `${((temp - 273.15) * (9 / 5) + 32).toFixed(0)}ºF` }
-    if (this.format == 'C') { return `${temp - 273.15}ºC` }
-    return `${temp}ºK`
+    if (this.format == 'C') { return `${(temp - 273.15).toFixed(0)}ºC` }
+    return `${temp.toFixed(1)}ºK`
   }
   get feelsLikeTempFormat() {
     let temp = this.main?.feels_like;
     if (this.format == 'F') { return `${((temp - 273.15) * (9 / 5) + 32).toFixed(0)}ºF` }
-    if (this.format == 'C') { return `${temp - 273.15}ºC` }
+    if (this.format == 'C') { return `${(temp - 273.15).toFixed(0)}ºC` }
     return `${temp}ºK`
   }
 

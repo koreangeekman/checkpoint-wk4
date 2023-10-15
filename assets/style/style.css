@@ -29,7 +29,7 @@ body {
 }
 
 #BGImgCredit p {
-  font-size: .5rem;
+  font-size: .75rem;
   margin: 0;
 }
 
@@ -149,7 +149,7 @@ i {
 
 /* !SECTION */
 /* ---------------------------------------- */
-/* SECTION TODO */
+/* SECTION TODO TASK LIST */
 
 form i {
   color: orange;
