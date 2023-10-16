@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js";
+import { clockService } from "../services/ClockService.js";
 import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
 
@@ -22,7 +23,7 @@ function _drawClock() {
   contentHTML = hh + (ss % 2 == 0 ? '<span class="text-secondary">:</span>' : ':') + (mm < 10 ? '0' + mm : mm) + `<span class="ampm">${ampm}</span>`
 
   // console.log('[ClockController] _drawClock()', contentHTML);
-  setHTML('clock', contentHTML)
+  setHTML('clock', contentHTML);
 }
 
 function _greeting() {
@@ -54,5 +55,8 @@ export class ClockController {
     AppState.on('account', _greeting)
   }
 
-
+  toggle() {
+    clockService.toggle();
+    _drawClock();
+  }
 }
