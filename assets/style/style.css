@@ -21,6 +21,10 @@ i {
   text-shadow: 0 0 5px black;
 }
 
+.bar {
+  border-left: 1px dashed grey;
+}
+
 /* !SECTION */
 /* ---------------------------------------- */
 /* SECTION BG IMG CSS */
@@ -107,10 +111,6 @@ body {
   margin-bottom: 0;
 }
 
-.bar {
-  border-left: 1px dashed grey;
-}
-
 .temp {
   cursor: help;
 }
@@ -121,7 +121,8 @@ body {
   border-radius: 1rem;
 }
 
-.tempSmall {
+.tempSmall,
+.todoSmall {
   font-size: 1rem;
   line-height: .5rem;
 }
