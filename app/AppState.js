@@ -25,7 +25,8 @@ class ObservableAppState extends EventEmitter {
     location: 'Boise',
     timeFormat: 12,
     weatherDetails: false,
-    bgImgSticky: false
+    bgImgSticky: false,
+    toDoVisibility: false
   }
 
   weather = null //

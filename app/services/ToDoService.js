@@ -52,26 +52,6 @@ class ToDoService {
     }
   }
 
-  async toggle(id) {
-    try {
-      // const entry = await api.get(`api/todos/${id}`)
-      // if (!entry.data.completed) { entry.data.completed = true } else { entry.data.completed = false }
-      const index = AppState.toDoList.findIndex(task => task.id == id);
-      const entry = AppState.toDoList[index];
-      if (!entry.completed) { entry.completed = true } else { entry.completed = false }
-      AppState.emit('toDoList'); // positioned here for better UX (immediate redraw)
-      const res = await api.put(`api/todos/${id}`, entry);
-      console.log('results of put/update', res.data);
-      AppState.toDoList.splice(index, 1, new ToDo(res.data));
-      // AppState.emit('toDoList');
-    } catch (error) {
-      if (!entry.completed) { entry.completed = true } else { entry.completed = false }
-      AppState.emit('toDoList'); // in case of error, ^ revert change and < redraw
-      console.error('[ToDoService] toggle()', error);
-      Pop.error('[ToDoService] toggle()', error)
-    }
-  }
-
   async removeTask(id) {
     let specifiedTaskIndex = null;
     let specifiedTask = null;
@@ -93,12 +73,40 @@ class ToDoService {
     }
   }
 
+  async toggle(id) {
+    try {
+      // const entry = await api.get(`api/todos/${id}`)
+      // if (!entry.data.completed) { entry.data.completed = true } else { entry.data.completed = false }
+      const index = AppState.toDoList.findIndex(task => task.id == id);
+      const entry = AppState.toDoList[index];
+      if (!entry.completed) { entry.completed = true } else { entry.completed = false }
+      AppState.emit('toDoList'); // positioned here for better UX (immediate redraw)
+      const res = await api.put(`api/todos/${id}`, entry);
+      console.log('results of put/update', res.data);
+      AppState.toDoList.splice(index, 1, new ToDo(res.data));
+      // AppState.emit('toDoList');
+    } catch (error) {
+      if (!entry.completed) { entry.completed = true } else { entry.completed = false }
+      AppState.emit('toDoList'); // in case of error, ^ revert change and < redraw
+      console.error('[ToDoService] toggle()', error);
+      Pop.error('[ToDoService] toggle()', error)
+    }
+  }
+
+  toggleVisibility() {
+    if (AppState.settings.toDoVisibility) {
+      AppState.settings.toDoVisibility = false;
+      return
+    }
+    AppState.settings.toDoVisibility = true;
+  }
+
   sortList(type) {
     if (type == 'completed') {
       const top = AppState.toDoList.filter(task => task.completed == false)
       const bottom = AppState.toDoList.filter(task => task.completed == true)
       AppState.toDoList = top.concat(bottom)
-      console.log('[ToDoService] sortList()', AppState.toDoList);
+      // console.log('[ToDoService] sortList()', AppState.toDoList);
     }
   }
 

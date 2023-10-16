@@ -175,6 +175,12 @@ body {
   visibility: visible;
 }
 
+.refreshQuote {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  text-shadow: 0 0 5px black;
+}
 
 /* !SECTION */
 /* ---------------------------------------- */

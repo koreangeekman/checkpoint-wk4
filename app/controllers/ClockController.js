@@ -28,13 +28,21 @@ function _drawClock() {
 function _greeting() {
   const hour = new Date().getHours();
   let ToD = '';
-  if (hour < 3) { ToD = 'Go to sleep, ' }
-  if (hour < 6) { Pop.error('.. Did you sleep??'); return }
-  if (hour < 12) { ToD = 'Good morning, ' }
-  if (hour == 12) { Pop.success(`It's hiiigh nooon~`); return }
-  if (hour < 17) { ToD = 'Good afternoon, ' }
-  if (hour < 22) { ToD = 'Good evening, ' }
-  if (hour >= 22) { ToD = 'Good night, ' }
+  if (hour < 3) {
+    ToD = 'Go to sleep, '
+  } else if (hour < 6) {
+    Pop.error('.. Did you sleep??'); return
+  } else if (hour < 12) {
+    ToD = 'Good morning, '
+  } else if (hour == 12) {
+    Pop.success(`It's hiiigh nooon~`); return
+  } else if (hour < 17) {
+    ToD = 'Good afternoon, '
+  } else if (hour < 22) {
+    ToD = 'Good evening, '
+  } else if (hour >= 22) {
+    ToD = 'Good night, '
+  }
   Pop.success(ToD + AppState.account.name + '!')
 }
 

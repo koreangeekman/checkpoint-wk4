@@ -26,5 +26,9 @@ export class InspirationalController {
   constructor() {
     _getQuote();
   }
+
+  refresh() {
+    _getQuote();
+  }
 }
 

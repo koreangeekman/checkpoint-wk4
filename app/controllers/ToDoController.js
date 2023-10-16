@@ -9,12 +9,16 @@ function _drawToDoList() {
   <div class="d-flex justify-content-between todoSmall mx-1 my-2">
     <i onclick="app.ToDoController.sortList('completed')" type="button">Sort List <i class="mdi mdi-sort-bool-ascending-variant"></i></i>
     <div class="bar"></div>
-    <i>Tasks remaining: &nbsp ${incomplete.length}</i>
+    <i onclick="app.ToDoController.toggleVisibility()" type="button">Tasks remaining: &nbsp ${incomplete.length}</i>
     <div class="bar"></div>
     <i onclick="app.ToDoController.clearAll()" type="button" disabled>Clear list <i class="mdi mdi-broom"></i></i>
   </div>
   `;
-  AppState.toDoList.forEach(task => contentHTML += task.listTemplate);
+  if (AppState.settings.toDoVisibility) {
+    incomplete.forEach(task => contentHTML += task.listTemplate)
+  } else {
+    AppState.toDoList.forEach(task => contentHTML += task.listTemplate);
+  }
   setHTML('todoList', contentHTML)
 }
 
@@ -35,6 +39,15 @@ export class ToDoController {
     }
   }
 
+  async removeTask(id) {
+    try {
+      await toDoService.removeTask(id)
+    } catch (error) {
+      console.error('[ToDoController] removeTask()', error);
+      Pop.error('[ToDoController] removeTask()', error)
+    }
+  }
+
   async toggle(id) {
     try {
       await toDoService.toggle(id)
@@ -44,13 +57,9 @@ export class ToDoController {
     }
   }
 
-  async removeTask(id) {
-    try {
-      await toDoService.removeTask(id)
-    } catch (error) {
-      console.error('[ToDoController] removeTask()', error);
-      Pop.error('[ToDoController] removeTask()', error)
-    }
+  toggleVisibility() {
+    toDoService.toggleVisibility();
+    _drawToDoList();
   }
 
   async clearAll() {
