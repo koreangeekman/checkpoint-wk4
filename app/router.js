@@ -1,4 +1,5 @@
 import { BGImgController } from "./controllers/BGImgController.js";
+import { ClockController } from "./controllers/ClockController.js";
 import { InspirationalController } from "./controllers/InspirationalController.js";
 import { ToDoController } from "./controllers/ToDoController.js";
 import { WeatherController } from "./controllers/WeatherController.js";
@@ -10,7 +11,7 @@ import { WeatherController } from "./controllers/WeatherController.js";
 export const router = [
   {
     path: '',
-    controller: [ToDoController, BGImgController, InspirationalController, WeatherController],
+    controller: [ToDoController, BGImgController, InspirationalController, WeatherController, ClockController],
     view: null
   }
 ]

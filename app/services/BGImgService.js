@@ -9,12 +9,12 @@ function _saveData() {
 }
 
 function _checkExistingBGImage(bgImgObj) {
-  const check = AppState.bgImgs.find(img => img.url == bgImgObj.url)
-  console.log('check for an existing bg image saved to local', bgImgObj, check);
-  if (check) {
-    console.log('[BG Image already saved to local storage]');
-    return
-  }
+  // const check = AppState.bgImgs.find(img => img.url == bgImgObj.url)
+  // console.log('check for an existing bg image saved to local', bgImgObj, check);
+  // if (check) {
+  //   console.log('[BG Image already saved to local storage]');
+  //   return
+  // }
   AppState.bgImgs.push(bgImgObj); // save for cycling through manually later
   _saveData();
 }

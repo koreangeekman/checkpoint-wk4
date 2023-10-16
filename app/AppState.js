@@ -23,6 +23,7 @@ class ObservableAppState extends EventEmitter {
     // accountId: this.account.id,
     tempFormat: "F",
     location: 'Boise',
+    timeFormat: 12,
     weatherDetails: false,
     bgImgSticky: false
   }
