@@ -34,7 +34,7 @@ body {
 .BGImgCredit {
   cursor: help;
   height: fit-content;
-  width: fit-content;
+  width: 250px;
   filter: blur(1px);
   opacity: .25;
   transition: ease-in-out .25s;

@@ -30,12 +30,12 @@ export class BGImgController {
     bgImgService.prev()
   }
 
-  pause() {
-    bgImgService.pause()
-  }
-
   next() {
     bgImgService.next()
+  }
+
+  rng() {
+    bgImgService.rng()
   }
 }
 

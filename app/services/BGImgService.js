@@ -49,16 +49,21 @@ class BGImgService {
     AppState.bgImg = AppState.bgImgs[(findCurrent() == 0 ? 1 : findCurrent()) - 1]
   }
 
-  pause() {
-  }
-
   next() {
     if (AppState.bgImgs.length <= 2 || findCurrent() == AppState.bgImgs.length - 1) {
       this.getBGImg();
       return
     }
     AppState.bgImg = AppState.bgImgs[findCurrent() + 1]
+  }
 
+  rng() {
+    if (AppState.bgImgs.length <= 2) {
+      return
+    }
+    const rng = Math.floor(Math.random() * AppState.bgImgs.length)
+    AppState.bgImg = AppState.bgImgs[rng]
+    console.log('random index for bg img', rng);
   }
 
 }
