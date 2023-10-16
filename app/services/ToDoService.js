@@ -65,6 +65,7 @@ class ToDoService {
       const res = await api.delete(`api/todos/${id}`);
       console.log('Task removed successfully?', res.data);
       // AppState.toDoList = AppState.toDoList.filter(task => task.id != id);
+      _saveToDos();
     } catch (error) {
       AppState.toDoList.splice(specifiedTaskIndex, 0, specifiedTask);
       AppState.emit('toDoList'); // in case of error, ^ revert change and < redraw
@@ -84,6 +85,7 @@ class ToDoService {
       const res = await api.put(`api/todos/${id}`, entry);
       console.log('results of put/update', res.data);
       AppState.toDoList.splice(index, 1, new ToDo(res.data));
+      _saveToDos();
       // AppState.emit('toDoList');
     } catch (error) {
       if (!entry.completed) { entry.completed = true } else { entry.completed = false }

@@ -154,6 +154,7 @@ body {
 /* SECTION QUOTE */
 
 #quote {
+  z-index: 0;
   text-align: center;
   align-self: center;
 }
@@ -203,6 +204,7 @@ form i {
 }
 
 .listItem {
+  z-index: 2;
   /* background-color: #123456b0; */
   border-radius: .25rem;
   /*  */

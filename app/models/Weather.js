@@ -77,6 +77,21 @@ export class Weather {
     this.format = data.format || 'F'
   }
 
+  get formatSunrise() {
+    // console.log('sunrise raw', this.sunrise);
+    const sunrise = new Date(this.sunrise)
+    console.log('sunrise formatted', sunrise);
+    const hh = sunrise.getHours(); const mm = sunrise.getMinutes(); const ss = sunrise.getSeconds();
+    return hh + ':' + (mm < 10 ? "0" + mm : mm) + ':' + (ss < 10 ? "0" + ss : ss)
+  }
+  get formatSunset() {
+    // console.log('sunset raw', this.sunset);
+    const sunset = new Date(this.sunset)
+    console.log('sunset formatted', sunset);
+    const hh = sunset.getHours(); const mm = sunset.getMinutes(); const ss = sunset.getSeconds();
+    return hh + ':' + (mm < 10 ? "0" + mm : mm) + ':' + (ss < 10 ? "0" + ss : ss)
+  }
+
   get weatherTemplate() {
     return `
       <span class="d-flex pt-2 align-items-center">
@@ -126,12 +141,12 @@ export class Weather {
           <p class="mb-0">GMT${this.timezone / 3600}</p>
         </span>
         <span class="d-flex justify-content-between">
-          <p class="mb-0">Sunrise: </p>
-          <p class="mb-0">${this.sunrise}</p>
+          <p class="mb-0">Sunrise: &nbsp</p>
+          <p class="mb-0">${this.formatSunrise}am</p>
         </span>
         <span class="d-flex justify-content-between">
           <p class="mb-0">Sunset: </p>
-          <p class="mb-0">${this.sunset}</p>
+          <p class="mb-0">${this.formatSunset}pm</p>
         </span>
         <span class="d-flex justify-content-between">
           <p class="mb-0">Weather: </p>
