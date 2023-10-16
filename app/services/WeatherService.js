@@ -8,15 +8,20 @@ function _saveSettings() {
   saveState('settings', AppState.settings);
 }
 
+// function _saveWeather() {
+//   saveState('weather', AppState.weather)
+// }
+
 class WeatherService {
 
   async getWeather() {
     try {
       const res = await api.get('api/weather');
-      AppState.today.weather = new Weather(res.data);
-      AppState.today.weather.format = AppState.settings.tempFormat
-      // console.log('formatted', AppState.today.weather);
-      AppState.emit('today');
+      AppState.weather = new Weather(res.data);
+      AppState.weather.format = AppState.settings.tempFormat
+      // console.log('formatted', AppState.weather);
+      // _saveWeather();
+      // AppState.emit('weather');
     } catch (error) {
       console.error('[WeatherService] getWeather()', error);
       Pop.error('[WeatherService] getWeather()', error)
@@ -26,15 +31,11 @@ class WeatherService {
   changeType() {
     const type = AppState.settings.tempFormat;
     if (type == 'F') {
-      AppState.today.weather.format = 'C'
+      AppState.weather.format = 'C'
       AppState.settings.tempFormat = 'C'
     }
     if (type == 'C') {
-      AppState.today.weather.format = 'K'
-      AppState.settings.tempFormat = 'K'
-    }
-    if (type == 'K') {
-      AppState.today.weather.format = 'F'
+      AppState.weather.format = 'F'
       AppState.settings.tempFormat = 'F'
     }
     // console.log('change temp type', type, AppState.today.weather.format);

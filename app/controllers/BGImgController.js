@@ -4,13 +4,10 @@ import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
 
-function _drawBGImg(data) {
-  document.body.style.backgroundImage = `url('${data.largeImgUrl}')`
-  const contentHTML = `
-      <p>Author: ${data.author}</p>
-      <p>Tags: ${data.query}</p>
-      <p>Query: ${data.tags}</p>
-  `
+function _drawBGImg() {
+  const bgImg = AppState.bgImg
+  document.body.style.backgroundImage = `url('${bgImg.largeImgUrl}')`
+  const contentHTML = bgImg.imageCreditTemplate;
   setHTML('BGImgCredit', contentHTML);
 }
 
@@ -26,9 +23,19 @@ async function _getBGImg() {
 export class BGImgController {
   constructor() {
     _getBGImg();
+    AppState.on('bgImg', _drawBGImg)
   }
 
+  prev() {
+    bgImgService.prev()
+  }
 
+  pause() {
+    bgImgService.pause()
+  }
 
+  next() {
+    bgImgService.next()
+  }
 }
 

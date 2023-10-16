@@ -63,12 +63,10 @@
 //   "origin": "https://openweathermap.org"
 // }
 
-import { AppState } from "../AppState.js";
-import { generateId } from "../utils/GenerateId.js";
 
 export class Weather {
   constructor(data) {
-    this.id = data.id || generateId()
+    this.id = data.id
     this.location = data.name
     this.coord = data.coord // lon/lat coords
     this.weather = data.weather // description + icon
@@ -110,7 +108,7 @@ export class Weather {
         <p class="mb-0 px-2">
           ${this.mainTempFormat}
         </p>
-        <img class="img-fluid w-100" src="https://openweathermap.org/img/wn/${this.weather['0']?.icon}.png" alt="${this.weather['0']?.description}">
+        <img class="img-fluid weatherIcon" src="https://openweathermap.org/img/wn/${this.weather['0']?.icon}.png" alt="${this.weather['0']?.description}">
       </div>
       <p class="tempSmall mb-4">
         Feels like: ${this.feelsLikeTempFormat}
@@ -149,26 +147,26 @@ export class Weather {
   get mainTempFormat() {
     let temp = this.main?.temp;
     if (this.format == 'F') { return `${((temp - 273.15) * (9 / 5) + 32).toFixed(0)}ºF` }
-    if (this.format == 'C') { return `${(temp - 273.15).toFixed(0)}ºC` }
-    return `${temp.toFixed(0)}ºK`
+    if (this.format == 'C') { return `${(temp - 273.15).toFixed(1)}ºC` }
+    return `${temp.toFixed(2)}ºK`
   }
   get minTempFormat() {
     let temp = this.main?.temp_min;
     if (this.format == 'F') { return `${((temp - 273.15) * (9 / 5) + 32).toFixed(0)}ºF` }
-    if (this.format == 'C') { return `${(temp - 273.15).toFixed(0)}ºC` }
-    return `${temp.toFixed(1)}ºK`
+    if (this.format == 'C') { return `${(temp - 273.15).toFixed(1)}ºC` }
+    return `${temp.toFixed(2)}ºK`
   }
   get maxTempFormat() {
     let temp = this.main?.temp_max;
     if (this.format == 'F') { return `${((temp - 273.15) * (9 / 5) + 32).toFixed(0)}ºF` }
-    if (this.format == 'C') { return `${(temp - 273.15).toFixed(0)}ºC` }
-    return `${temp.toFixed(1)}ºK`
+    if (this.format == 'C') { return `${(temp - 273.15).toFixed(1)}ºC` }
+    return `${temp.toFixed(2)}ºK`
   }
   get feelsLikeTempFormat() {
     let temp = this.main?.feels_like;
     if (this.format == 'F') { return `${((temp - 273.15) * (9 / 5) + 32).toFixed(0)}ºF` }
-    if (this.format == 'C') { return `${(temp - 273.15).toFixed(0)}ºC` }
-    return `${temp}ºK`
+    if (this.format == 'C') { return `${(temp - 273.15).toFixed(1)}ºC` }
+    return `${temp.toFixed(2)}ºK`
   }
 
 }

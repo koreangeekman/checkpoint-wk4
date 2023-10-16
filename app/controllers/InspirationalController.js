@@ -15,8 +15,8 @@ async function _getQuote() {
 
 function _drawHTML(quoteObj) {
   const contentHTML = `
-  <div class="blueBlur align-self-center quoteContent p-3">${quoteObj.content}</div>
-  <div class="blueBlur align-self-center quoteInfo my-2 p-3">${quoteObj.author} • [${quoteObj.tags}]</div>
+  <div class="blueBlur align-self-center quoteContent px-2 py-1">${quoteObj.content}</div>
+  <div class="blueBlur align-self-center quoteInfo my-2 px-2 py-1">${quoteObj.author} • [${quoteObj.tags}]</div>
   `
   // console.log(contentHTML);
   setHTML('quote', contentHTML)

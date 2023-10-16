@@ -10,7 +10,7 @@ function _saveData() {
 
 function _checkExistingBGImage(bgImgObj) {
   const check = AppState.bgImgs.find(img => img.url == bgImgObj.url)
-  // console.log('check for an existing bg image saved to local', check);
+  console.log('check for an existing bg image saved to local', bgImgObj, check);
   if (check) {
     console.log('[BG Image already saved to local storage]');
     return
@@ -19,19 +19,46 @@ function _checkExistingBGImage(bgImgObj) {
   _saveData();
 }
 
+function findCurrent() {
+  const current = AppState.bgImg;
+  const index = AppState.bgImgs.findIndex(img => img.id == current.id)
+  if (index == -1) { return 0 }
+  return index
+}
+
 class BGImgService {
 
   async getBGImg() {
     try {
       const res = await api.get('api/images');
       const bgImgObj = new BGImg(res.data)
-      // console.log('[BGImgService getBGImg()] api.get response in BGImg model', bgImgObj);
+      AppState.bgImg = bgImgObj
       _checkExistingBGImage(bgImgObj);
+      console.log('[BGImgService getBGImg()] api.get response in BGImg model', bgImgObj);
       return bgImgObj;
     } catch (error) {
       console.error('[BGImgService] getBGImg()', error);
       Pop.error('[BGImgService] getBGImg()', error)
     }
+  }
+
+  prev() {
+    if (AppState.bgImgs.length <= 1) {
+      Pop.error('Additional background images have not been saved yet')
+    }
+    AppState.bgImg = AppState.bgImgs[(findCurrent() == 0 ? 1 : findCurrent()) - 1]
+  }
+
+  pause() {
+  }
+
+  next() {
+    if (AppState.bgImgs.length <= 2 || findCurrent() == AppState.bgImgs.length - 1) {
+      this.getBGImg();
+      return
+    }
+    AppState.bgImg = AppState.bgImgs[findCurrent() + 1]
+
   }
 
 }

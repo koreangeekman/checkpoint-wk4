@@ -22,11 +22,12 @@
     <div class="row">
       <div class="col-12 align-items-between h-100">
 
-        <div class="w-100 d-flex justify-content-between p-3">
+        <div class="row d-flex justify-content-between p-1 p-md-3">
 
           <!-- WEATHER WIDGET -->
-          <div class="d-flex weather" onclick="app.WeatherController.changeType()">
-            <div class="d-block text-center temp px-3" id="weather">
+          <div class="col-12 col-md-auto d-flex weather" onclick="app.WeatherController.changeType()">
+            <i class="fs-4 refresh mdi mdi-refresh-circle" onclick="app.WeatherController.refresh()"></i>
+            <div class="d-block text-center temp pe-3" id="weather">
               <!-- draw in weather data -->
             </div>
             <div class="bar"></div>
@@ -35,13 +36,21 @@
             </div>
           </div>
 
-          <!-- BG IMG CREDIT -->
-          <div class="d-block blueBlur p-2" id="BGImgCredit">
-            <!-- draw in bg credit info -->
+          <!-- BG IMG CREDIT & CONTROLS WIDGET -->
+          <div class="col-6 col-md-1 d-block text-center blueBlur BGImgCredit">
+            <p>Background Image Credit & Controls</p>
+            <div class="d-flex flex-wrap p-2" id="BGImgCredit">
+              <!-- draw in bg credit info -->
+            </div>
+            <div class="d-flex justify-content-evenly">
+              <i class="fs-4 mdi mdi-skip-backward" onclick="app.BGImgController.prev()"></i>
+              <i class="fs-4 mdi mdi-pause" onclick="app.BGImgController.pause()"></i>
+              <i class="fs-4 mdi mdi-skip-forward" onclick="app.BGImgController.next()"></i>
+            </div>
           </div>
 
           <!-- SECTION TODO-->
-          <div class="d-block d-none" id="ToDo">
+          <div class="col-12 col-md-auto d-none" id="ToDo">
             <form class="d-flex align-items-center" onsubmit="app.ToDoController.addTask(event)">
               <input class="form-control" type="text" name="description" placeholder="New Task?" maxlength="32">
               <button class="btn p-0" type="submit"><i class="fs-3 p-1 mdi mdi-plus-box"></i>
@@ -54,16 +63,16 @@
           <!-- !SECTION TODO-->
         </div>
 
-        <div class="d-block h-100">
+        <div class="row">
           <!-- INSPIRATIONAL QUOTE FIELD -->
-          <div class="w-100 d-flex justify-content-center text-center">
+          <div class="col-12 d-flex justify-content-center text-center">
             <div class="text-white d-block px-5" id="quote">
               <!-- TODO find out why elements wont center in a d-block, making me do ^ d-flex/align combo instead-->
               <!-- draw in quote -->
             </div>
           </div>
 
-          <div class="d-flex justify-content-center w-100">
+          <div class="col-12 col-md-10 d-flex justify-content-center w-100">
             <!-- SECTION USER-->
             <div class="d-flex justify-content-between align-items-center border userBar">
               <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45"
@@ -79,7 +88,10 @@
               </div>
 
               <!-- AUTH STATE / LOGIN/OUT -->
-              <div class="justify-content-end align-items-center d-flex" id="authstate"></div>
+              <div class="d-flex">
+                <i class="fs-2 settings px-3 mdi mdi-cog"></i>
+                <div class="justify-content-end align-items-center d-flex" id="authstate"></div>
+              </div>
             </div>
             <!-- !SECTION USER -->
 

@@ -11,9 +11,9 @@ class InspirationalService {
     try {
       const res = await api.get('api/quotes')
       const quoteObj = new Quote(res.data)
-      // console.log(quoteObj);
-
+      // console.log('returned quote object', quoteObj);
       return quoteObj
+
     } catch (error) {
       console.error('[InspirationalService] getQuote()', error);
       Pop.error('[InspirationalService] getQuote()', error)

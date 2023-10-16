@@ -43,6 +43,24 @@ export class BGImg {
     this.tags = data.tags || ["untagged"]
     this.query = data.query
   }
+
+
+  get imageCreditTemplate() {
+    return `
+      <span class="d-flex w-100 justify-content-between">
+        <p>Author:</p>
+        <p>${this.author}</p>
+      </span>
+      <span class="d-flex w-100 justify-content-between">
+        <p>Tags: </p>
+        <p>${this.query}</p>
+      </span>
+      <span class="d-flex w-100 justify-content-between">
+        <p>Query: </p>
+        <p>${this.tags}</p>
+      </span>
+    `
+  }
 }
 
 

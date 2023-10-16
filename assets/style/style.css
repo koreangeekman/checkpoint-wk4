@@ -8,6 +8,19 @@
   /* width: fit-content; */
 }
 
+.refresh {
+  position: relative;
+  top: -15px;
+  left: -20px;
+  text-shadow: 0 0 5px black;
+}
+
+hr,
+i {
+  color: orange;
+  text-shadow: 0 0 5px black;
+}
+
 /* !SECTION */
 /* ---------------------------------------- */
 /* SECTION BG IMG CSS */
@@ -18,25 +31,26 @@ body {
   background-size: cover;
 }
 
-#BGImgCredit {
+.BGImgCredit {
   cursor: help;
+  height: fit-content;
+  width: fit-content;
   filter: blur(1px);
   opacity: .25;
   transition: ease-in-out .25s;
-  height: fit-content;
-  width: fit-content;
 }
 
-#BGImgCredit p {
-  font-size: .75rem;
-  margin: 0;
-}
-
-#BGImgCredit:hover {
+.BGImgCredit:hover {
   filter: blur(0);
   opacity: 1;
   /*  */
 }
+
+.BGImgCredit p {
+  font-size: .75rem;
+  margin: 0;
+}
+
 
 /* !SECTION */
 /* ---------------------------------------- */
@@ -49,6 +63,15 @@ body {
   height: fit-content;
   color: whitesmoke;
   background-color: #123456b0;
+}
+
+.userBar i {
+  opacity: .5;
+  transition: ease-in-out .25s;
+}
+
+.userBar i:hover {
+  opacity: .86;
 }
 
 /* !SECTION */
@@ -75,6 +98,11 @@ body {
   height: fit-content;
 }
 
+.weatherIcon {
+  height: 86px;
+  width: 86px;
+}
+
 .weatherDetails p {
   margin-bottom: 0;
 }
@@ -91,11 +119,6 @@ body {
   font-family: 'Courier New', Courier, monospace;
   border: 1px solid white;
   border-radius: 1rem;
-}
-
-.temp hr,
-i {
-  color: orange;
 }
 
 .tempSmall {
@@ -127,6 +150,7 @@ i {
 .quoteContent {
   cursor: help;
   font-size: large;
+  max-width: 69%;
   width: fit-content;
   border-radius: 2rem;
 }

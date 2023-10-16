@@ -1,4 +1,5 @@
 import { BGImg } from "./models/BGImg.js"
+import { Quote } from "./models/Quote.js"
 import { Settings } from "./models/Settings.js"
 import { ToDo } from "./models/ToDo.js"
 import { EventEmitter } from './utils/EventEmitter.js'
@@ -26,15 +27,11 @@ class ObservableAppState extends EventEmitter {
     bgImgSticky: false
   }
 
-  today = {
-    bgImgUrl: '',
-    quote: '',
-    weather: ''
-  }
+  weather = null //
 
-  bgImgs = [] //record all BG Images processed in view
-
-  favBGImgs = []
+  bgImg = null // current img
+  bgImgs = [] // record all BG Images processed in view
+  favBGImgs = [] // future option
 
   // !SECTION GLOBAL VARIABLES
 
