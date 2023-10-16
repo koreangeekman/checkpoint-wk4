@@ -7,11 +7,11 @@ function _drawToDoList() {
   const incomplete = AppState.toDoList.filter(task => task.completed == false)
   let contentHTML = `
   <div class="d-flex justify-content-between todoSmall mx-1 my-2">
-    <i onclick="app.ToDoController.sortList('completed')" type="button">Sort List <i class="mdi mdi-sort-bool-ascending-variant"></i></i>
+    <i onclick="app.ToDoController.sortList('completed')" type="button" class="pe-2">Sort List <i class="mdi mdi-sort-bool-ascending-variant"></i></i>
     <div class="bar"></div>
-    <i onclick="app.ToDoController.toggleVisibility()" type="button">Tasks remaining: &nbsp ${incomplete.length}</i>
+    <i onclick="app.ToDoController.toggleVisibility()" type="button" class="px-2">Tasks remaining: &nbsp ${incomplete.length}</i>
     <div class="bar"></div>
-    <i onclick="app.ToDoController.clearAll()" type="button" disabled>Clear list <i class="mdi mdi-broom"></i></i>
+    <i onclick="app.ToDoController.clearAll()" type="button" class="ps-2" disabled>Clear list <i class="mdi mdi-broom"></i></i>
   </div>
   `;
   if (AppState.settings.toDoVisibility) {
